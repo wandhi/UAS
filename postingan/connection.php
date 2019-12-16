@@ -3,7 +3,7 @@
     // $databaseName = 'postingan';
     // $databaseUsername = 'root';
     // $databasePassword = '';
-    $mysqli = mysqli_connect('localhost', 'root', '', 'uas'); 
+    $mysqli = mysqli_connect('localhost', 'root', '', 'db_uas'); 
 ?>
 
 
