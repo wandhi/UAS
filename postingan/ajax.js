@@ -123,6 +123,28 @@ function loginPost() {
     req.send(data)
 }
 
+function buatPostObjectWisataDesa() {
+    var url= "submitpostObjectWisataDesa.php";
+    console.log('hahahahah')
+    var content = document.getElementById("content").value;
+    var data = "content="+content;
+
+    req.open("POST", url,true);
+    req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    req.onreadystatechange = function() {
+
+        console.log(req)
+
+        if(req.readyState == 4 && req.status ==200) {
+            ambilPostObjectWisataDesa();
+
+            document.getElementById("content").value ="";
+        }
+    }
+   
+    req.send(data)
+}
+
 
 function ambilPost() {
     var url = "getpost.php";
@@ -198,6 +220,25 @@ function ambilPostGaleryDesa() {
 }
 function ambilPostLemMas() {
     var url = "getpostLemMas.php";
+
+    req.open("GET", url , true);
+    req.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+
+    req.onreadystatechange = function() {
+        if(req.readyState == 4  && req.status ==200){
+            
+        }
+        console.log(req.statusText)
+        document.getElementById("post-content").innerHTML = req.responseText;
+    }
+
+    
+    req.send(null)
+   
+}
+
+function ambilPostObjectWisataDesa() {
+    var url = "getpostObjectWisataDesa.php";
 
     req.open("GET", url , true);
     req.setRequestHeader("Content-type","application/x-www-form-urlencoded");
@@ -295,6 +336,22 @@ function deletePostLemMas(id) {
         if(req.readyState == 4  && req.status ==200){
 
             ambilPostLemMas();
+        }
+    }
+    console.log(req)
+    req.send(null)
+}
+
+function deletePostObjectWisataDesa(id) {
+    console.log(id)
+    var url = "deletePostObjectWisataDesa.php?id="+id;
+
+    req.open("GET", url , true);
+    req.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+
+    req.onreadystatechange = function() {
+        if(req.readyState == 4  && req.status ==200){
+            ambilPostProfileDesa();
         }
     }
     console.log(req)
