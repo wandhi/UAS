@@ -10,7 +10,7 @@
      <div class='row'>
         <div class='col-md-1'></div>
         <div class='col-md-11' style='padding-left:5px'>
-            <p class='text-muted' id='post-text'>".$user_data['profile']."</p>
+            <p class='text-muted' id='post-text'>".$user_data['sejarah_desa']."</p>
         </div>
      </div>
      <div class='row' style='margin-top:10px;'>
@@ -19,7 +19,7 @@
         
         </div>
         <div class='col-md-10' style='padding-left:40px;'>
-            <botton style='width:80px' class='btn-danger btn-sm' onclick='deletePostSejarahDesa(".$user_data['id'].")' value='".$user_data['profile']."'>Delete</button>
+            <botton style='width:80px' class='btn-danger btn-sm' onclick='deletePostSejarahDesa(".$user_data['id'].")' value='".$user_data['sejarah_desa']."'>Delete</button>
 
         </div>
         </div>
