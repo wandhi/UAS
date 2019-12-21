@@ -41,14 +41,9 @@ function buatPostProfileDesa() {
     req.send(data)
 }
 
-<<<<<<< HEAD
 function buatPostGaleryDesa() {
     var url= "submitpostGaleryDesa.php";
     console.log('hahahahah')
-=======
-function buatPostLemMas() {
-    var url= "submitpostLemMas.php";
->>>>>>> e9821926759bba59f5f842e52b87b54bab66a442
     var content = document.getElementById("content").value;
     var data = "content="+content;
 
@@ -58,21 +53,34 @@ function buatPostLemMas() {
         console.log(req)
 
         if(req.readyState == 4 && req.status ==200) {
-<<<<<<< HEAD
             ambilPostGaleryDesa();
-=======
-            ambilPostProfileDesa();
->>>>>>> e9821926759bba59f5f842e52b87b54bab66a442
+¥            document.getElementById("content").value ="";
+        }
+    }
+   
+    req.send(data)
+}
+
+
+function buatPostLemMas() {
+    var url= "submitpostLemMas.php";
+    var content = document.getElementById("content").value;
+    var data = "content="+content;
+
+    req.open("POST", url,true);
+    req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    req.onreadystatechange = function() {
+        console.log(req)
+
+        if(req.readyState == 4 && req.status ==200) {
+            ambilPostLemMas();
             document.getElementById("content").value ="";
         }
     }
    
     req.send(data)
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> e9821926759bba59f5f842e52b87b54bab66a442
 
 function ambilPost() {
     var url = "getpost.php";
@@ -112,13 +120,25 @@ function ambilPostProfileDesa() {
    
 }
 
-<<<<<<< HEAD
 function ambilPostGaleryDesa() {
     var url = "getpostGaleryDesa.php";
-=======
+    req.open("GET", url , true);
+    req.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+
+    req.onreadystatechange = function() {
+        if(req.readyState == 4  && req.status ==200){
+            
+        }
+        console.log(req.statusText)
+        document.getElementById("post-content").innerHTML = req.responseText;
+    }
+
+    
+    req.send(null)
+   
+}
 function ambilPostLemMas() {
     var url = "getpostLemMas.php";
->>>>>>> e9821926759bba59f5f842e52b87b54bab66a442
 
     req.open("GET", url , true);
     req.setRequestHeader("Content-type","application/x-www-form-urlencoded");
@@ -171,27 +191,32 @@ function deletePostProfileDesa(id) {
     req.send(null)
 }
 
-<<<<<<< HEAD
 function deletePostGaleryDesa(id) {
     console.log(id)
     var url = "deletePostGaleryDesa.php?id="+id;
-=======
-
-function deletePostLemMas(id) {
-    console.log(id)
-    var url = "deletePostLemMas.php?id="+id;
->>>>>>> e9821926759bba59f5f842e52b87b54bab66a442
 
     req.open("GET", url , true);
     req.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 
     req.onreadystatechange = function() {
         if(req.readyState == 4  && req.status ==200){
-<<<<<<< HEAD
             ambilPostGaleryDesa();
-=======
+        }
+    }
+    console.log(req)
+    req.send(null)
+}
+
+function deletePostLemMas(id) {
+    console.log(id)
+    var url = "deletePostLemMas.php?id="+id;
+
+    req.open("GET", url , true);
+    req.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+
+    req.onreadystatechange = function() {
+        if(req.readyState == 4  && req.status ==200){
             ambilPostLemMas();
->>>>>>> e9821926759bba59f5f842e52b87b54bab66a442
         }
     }
     console.log(req)
