@@ -41,10 +41,9 @@ function buatPostProfileDesa() {
     req.send(data)
 }
 
-function buatPostGaleryDesa() {
-    var url= "submitpostGaleryDesa.php";
-    console.log('hahahahah')
-    var content = document.getElementById("content").value;
+function buatPostSejarahDesa() {
+    var url= "submitpostSejarahDesa.php";
+	var content = document.getElementById("content").value;
     var data = "content="+content;
 
     req.open("POST", url,true);
@@ -54,6 +53,28 @@ function buatPostGaleryDesa() {
 
         if(req.readyState == 4 && req.status ==200) {
             ambilPostGaleryDesa();
+
+            document.getElementById("content").value ="";
+        }
+    }
+   
+    req.send(data)
+}
+function buatPostGaleryDesa() {
+    var url= "submitpostGaleryDesa.php";
+    console.log('hahahahah')
+    var content = document.getElementById("content").value;
+    var data = "content="+content;
+
+    req.open("POST", url,true);
+    req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    req.onreadystatechange = function() {
+
+        console.log(req)
+
+        if(req.readyState == 4 && req.status ==200) {
+            ambilPostGaleryDesa();
+
             document.getElementById("content").value ="";
         }
     }
@@ -141,6 +162,23 @@ function ambilPostProfileDesa() {
    
 }
 
+function ambilPostSejarahDesa() {
+    var url = "getpostSejarahDesa.php";
+	 req.open("GET", url , true);
+     req.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+
+     req.onreadystatechange = function() {
+         if(req.readyState == 4  && req.status ==200){
+             
+         }
+         console.log(req.statusText)
+         document.getElementById("post-content").innerHTML = req.responseText;
+     }
+ 
+     
+     req.send(null)
+    
+ }
 function ambilPostGaleryDesa() {
     var url = "getpostGaleryDesa.php";
     req.open("GET", url , true);
@@ -212,6 +250,24 @@ function deletePostProfileDesa(id) {
     req.send(null)
 }
 
+function deletePostSejarahDesa(id) {
+    console.log(id)
+    var url = "deletePostSejarahDesa.php?id="+id;
+    
+    req.open("GET", url , true);
+    req.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+
+    req.onreadystatechange = function() {
+        if(req.readyState == 4  && req.status ==200){
+            ambilPostSejarahDesa();
+			
+			 }
+
+    }
+    console.log(req)
+    req.send(null)
+}
+
 function deletePostGaleryDesa(id) {
     console.log(id)
     var url = "deletePostGaleryDesa.php?id="+id;
@@ -237,6 +293,7 @@ function deletePostLemMas(id) {
 
     req.onreadystatechange = function() {
         if(req.readyState == 4  && req.status ==200){
+
             ambilPostLemMas();
         }
     }
