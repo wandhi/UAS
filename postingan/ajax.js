@@ -41,9 +41,14 @@ function buatPostProfileDesa() {
     req.send(data)
 }
 
+<<<<<<< HEAD
 function buatPostGaleryDesa() {
     var url= "submitpostGaleryDesa.php";
     console.log('hahahahah')
+=======
+function buatPostLemMas() {
+    var url= "submitpostLemMas.php";
+>>>>>>> e9821926759bba59f5f842e52b87b54bab66a442
     var content = document.getElementById("content").value;
     var data = "content="+content;
 
@@ -53,13 +58,21 @@ function buatPostGaleryDesa() {
         console.log(req)
 
         if(req.readyState == 4 && req.status ==200) {
+<<<<<<< HEAD
             ambilPostGaleryDesa();
+=======
+            ambilPostProfileDesa();
+>>>>>>> e9821926759bba59f5f842e52b87b54bab66a442
             document.getElementById("content").value ="";
         }
     }
    
     req.send(data)
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> e9821926759bba59f5f842e52b87b54bab66a442
 
 function ambilPost() {
     var url = "getpost.php";
@@ -99,8 +112,13 @@ function ambilPostProfileDesa() {
    
 }
 
+<<<<<<< HEAD
 function ambilPostGaleryDesa() {
     var url = "getpostGaleryDesa.php";
+=======
+function ambilPostLemMas() {
+    var url = "getpostLemMas.php";
+>>>>>>> e9821926759bba59f5f842e52b87b54bab66a442
 
     req.open("GET", url , true);
     req.setRequestHeader("Content-type","application/x-www-form-urlencoded");
@@ -135,6 +153,8 @@ function hapusPost(id) {
     req.send(null)
 }
 
+
+
 function deletePostProfileDesa(id) {
     console.log(id)
     var url = "deletePostProfileDesa.php?id="+id;
@@ -151,16 +171,27 @@ function deletePostProfileDesa(id) {
     req.send(null)
 }
 
+<<<<<<< HEAD
 function deletePostGaleryDesa(id) {
     console.log(id)
     var url = "deletePostGaleryDesa.php?id="+id;
+=======
+
+function deletePostLemMas(id) {
+    console.log(id)
+    var url = "deletePostLemMas.php?id="+id;
+>>>>>>> e9821926759bba59f5f842e52b87b54bab66a442
 
     req.open("GET", url , true);
     req.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 
     req.onreadystatechange = function() {
         if(req.readyState == 4  && req.status ==200){
+<<<<<<< HEAD
             ambilPostGaleryDesa();
+=======
+            ambilPostLemMas();
+>>>>>>> e9821926759bba59f5f842e52b87b54bab66a442
         }
     }
     console.log(req)
