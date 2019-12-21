@@ -54,7 +54,7 @@ function buatPostGaleryDesa() {
 
         if(req.readyState == 4 && req.status ==200) {
             ambilPostGaleryDesa();
-¥            document.getElementById("content").value ="";
+            document.getElementById("content").value ="";
         }
     }
    
