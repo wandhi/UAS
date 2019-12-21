@@ -2,6 +2,6 @@
     include "connection.php";
     $post = $_POST['content'];
     
-    $insert = mysqli_query($mysqli, "INSERT into post (post) values ('$post')");
+    $insert = mysqli_query($mysqli, "INSERT into tb_profiledesa (profile) values ('$post')");
     echo $insert;
 ?>
