@@ -54,7 +54,7 @@ function buatPostGaleryDesa() {
 
         if(req.readyState == 4 && req.status ==200) {
             ambilPostGaleryDesa();
-¥            document.getElementById("content").value ="";
+            document.getElementById("content").value ="";
         }
     }
    
@@ -65,6 +65,27 @@ function buatPostGaleryDesa() {
 function buatPostLemMas() {
     var url= "submitpostLemMas.php";
     var content = document.getElementById("content").value;
+    var data = "content="+content;
+
+    req.open("POST", url,true);
+    req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    req.onreadystatechange = function() {
+        console.log(req)
+
+        if(req.readyState == 4 && req.status ==200) {
+            ambilPostLemMas();
+            document.getElementById("content").value ="";
+        }
+    }
+   
+    req.send(data)
+}
+
+function loginPost() {
+    var url= "submitpostLemMas.php";
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    console.log('username:'+username+' ,password:'+password)
     var data = "content="+content;
 
     req.open("POST", url,true);

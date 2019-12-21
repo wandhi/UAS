@@ -36,7 +36,7 @@
 	<script type="text/javascript" src="ajax.js"></script>
 </head>
 
-<body onload="ambilPostLemMas()">
+<body >
 
 <!-- Box for input post content -->
 <div class="container" id="container">
@@ -46,7 +46,7 @@
 			<br>
 			<input type="text" name="password"  class="form-control"  placeholder="password" />
 			<br>
-			<button onclick="buatPostLemMas(this.value);" type="button" style="float:right;" 
+			<button onclick="loginPost(this.value);" type="button" style="float:right;" 
 			class="btn btn-info btn-sm">POST</button>
 		</form>
 </div>
