@@ -40,7 +40,10 @@
 
 <!-- Box for input post content -->
 <div class="container" id="container">
+<br>
+<center><h5>Data Profile Desa</h5></center>
 	<div class="box">
+		<h6>Masukan Profile Desa</h6>
 		<form >
 			<textarea id="content" name="content" class="form-control" 
 			placeholder="Write Something..." maxlength="140"></textarea>
@@ -52,6 +55,7 @@
 
 <!-- div for load post list -->
 <div id="post-content">  
+
 </div>
 
 </div>
