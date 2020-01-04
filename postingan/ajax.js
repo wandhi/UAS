@@ -202,8 +202,82 @@ function updatePostProfileDesa(a,e) {
    
 }
 
+function updatePostGaleryDesa(a,e) {
+    var url = "updatePostGaleryDesa.php?id="+a+"&value="+e;
+
+    req.open("GET", url , true);
+    req.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+
+    req.onreadystatechange = function() {
+        if(req.readyState == 4  && req.status ==200){
+            ambilPostGaleryDesa();
+        }
+        // document.getElementById("post-content").innerHTML = req.responseText;
+    }
+
+    
+    req.send(null)
+   
+}
+
+function updatePostObjectWisataDesa(a,e) {
+    var url = "updatePostObjectWisataDesa.php?id="+a+"&value="+e;
+
+    req.open("GET", url , true);
+    req.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+
+    req.onreadystatechange = function() {
+        if(req.readyState == 4  && req.status ==200){
+            ambilPostObjectWisataDesa();
+        }
+        // document.getElementById("post-content").innerHTML = req.responseText;
+    }
+
+    
+    req.send(null)
+   
+}
+
 function ambilPostProfileDesaEdit(e) {
     var url = "getpostProfileDesa.php?row_id=true&id="+e;
+
+    req.open("GET", url , true);
+    req.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+
+    req.onreadystatechange = function() {
+        if(req.readyState == 4  && req.status ==200){
+            
+        }
+        console.log(req.statusText)
+        document.getElementById("post-content").innerHTML = req.responseText;
+    }
+
+    
+    req.send(null)
+   
+}
+
+function ambilPostGaleryDesaEdit(e) {
+    var url = "getpostGaleryDesa.php?row_id=true&id="+e;
+
+    req.open("GET", url , true);
+    req.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+
+    req.onreadystatechange = function() {
+        if(req.readyState == 4  && req.status ==200){
+            
+        }
+        console.log(req.statusText)
+        document.getElementById("post-content").innerHTML = req.responseText;
+    }
+
+    
+    req.send(null)
+   
+}
+
+function ambilPostObjectWisataDesaEdit(e) {
+    var url = "getpostObjectWisataDesa.php?row_id=true&id="+e;
 
     req.open("GET", url , true);
     req.setRequestHeader("Content-type","application/x-www-form-urlencoded");
