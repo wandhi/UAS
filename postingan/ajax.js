@@ -52,7 +52,7 @@ function buatPostSejarahDesa() {
         console.log(req)
 
         if(req.readyState == 4 && req.status ==200) {
-            ambilPostGaleryDesa();
+            ambilPostSejarahDesa();
 
             document.getElementById("content").value ="";
         }
@@ -202,8 +202,45 @@ function updatePostProfileDesa(a,e) {
    
 }
 
+function updatePostSejarahDesa(a,e) {
+    var url = "updatePostSejarahDesa.php?id="+a+"&value="+e;
+
+    req.open("GET", url , true);
+    req.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+
+    req.onreadystatechange = function() {
+        if(req.readyState == 4  && req.status ==200){
+            ambilPostSejarahDesa();
+        }
+        // document.getElementById("post-content").innerHTML = req.responseText;
+    }
+
+    
+    req.send(null)
+   
+}
+
 function ambilPostProfileDesaEdit(e) {
     var url = "getpostProfileDesa.php?row_id=true&id="+e;
+
+    req.open("GET", url , true);
+    req.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+
+    req.onreadystatechange = function() {
+        if(req.readyState == 4  && req.status ==200){
+            
+        }
+        console.log(req.statusText)
+        document.getElementById("post-content").innerHTML = req.responseText;
+    }
+
+    
+    req.send(null)
+   
+}
+
+function ambilPostSejarahDesaEdit(e) {
+    var url = "getpostSejarahDesa.php?row_id=true&id="+e;
 
     req.open("GET", url , true);
     req.setRequestHeader("Content-type","application/x-www-form-urlencoded");
