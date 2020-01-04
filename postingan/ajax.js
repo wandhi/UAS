@@ -202,20 +202,53 @@ function updatePostProfileDesa(a,e) {
    
 }
 
-<<<<<<< HEAD
-function updatePostGaleryDesa(a,e) {
-    var url = "updatePostGaleryDesa.php?id="+a+"&value="+e;
-=======
+
 function updatePostSejarahDesa(a,e) {
     var url = "updatePostSejarahDesa.php?id="+a+"&value="+e;
->>>>>>> a64389d390024be252055ab0f22060591577c3f0
 
     req.open("GET", url , true);
     req.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 
     req.onreadystatechange = function() {
         if(req.readyState == 4  && req.status ==200){
-<<<<<<< HEAD
+            ambilPostSejarahDesa()
+        }
+        // document.getElementById("post-content").innerHTML = req.responseText;
+    }
+
+    
+    req.send(null)
+   
+}
+
+function updatePostObjectWisataDesa(a,e) {
+    var url = "updatePostObjectWisataDesa.php?id="+a+"&value="+e;
+
+    req.open("GET", url , true);
+    req.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+
+    req.onreadystatechange = function() {
+        if(req.readyState == 4  && req.status ==200){
+            ambilPostObjectWisataDesa();
+
+        }
+        // document.getElementById("post-content").innerHTML = req.responseText;
+    }
+
+    
+    req.send(null)
+   
+}
+
+function updatePostGaleryDesa(a,e) {
+    var url = "updatePostGaleryDesa.php?id="+a+"&value="+e;
+
+
+    req.open("GET", url , true);
+    req.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+
+    req.onreadystatechange = function() {
+        if(req.readyState == 4  && req.status ==200){
             ambilPostGaleryDesa();
         }
         // document.getElementById("post-content").innerHTML = req.responseText;
@@ -235,9 +268,6 @@ function updatePostObjectWisataDesa(a,e) {
     req.onreadystatechange = function() {
         if(req.readyState == 4  && req.status ==200){
             ambilPostObjectWisataDesa();
-=======
-            ambilPostSejarahDesa();
->>>>>>> a64389d390024be252055ab0f22060591577c3f0
         }
         // document.getElementById("post-content").innerHTML = req.responseText;
     }
@@ -266,7 +296,7 @@ function ambilPostProfileDesaEdit(e) {
    
 }
 
-<<<<<<< HEAD
+
 function ambilPostGaleryDesaEdit(e) {
     var url = "getpostGaleryDesa.php?row_id=true&id="+e;
 
@@ -288,10 +318,28 @@ function ambilPostGaleryDesaEdit(e) {
 
 function ambilPostObjectWisataDesaEdit(e) {
     var url = "getpostObjectWisataDesa.php?row_id=true&id="+e;
-=======
+
+
+    req.open("GET", url , true);
+    req.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+
+    req.onreadystatechange = function() {
+        if(req.readyState == 4  && req.status ==200){
+            
+        }
+        console.log(req.statusText)
+        document.getElementById("post-content").innerHTML = req.responseText;
+    }
+
+    
+    req.send(null)
+   
+}
+
+
+
 function ambilPostSejarahDesaEdit(e) {
     var url = "getpostSejarahDesa.php?row_id=true&id="+e;
->>>>>>> a64389d390024be252055ab0f22060591577c3f0
 
     req.open("GET", url , true);
     req.setRequestHeader("Content-type","application/x-www-form-urlencoded");

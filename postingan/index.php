@@ -36,23 +36,57 @@
 	<script type="text/javascript" src="ajax.js"></script>
 </head>
 
-<body onload="ambilPostProfileDesa()">
+<body >
 
 <!-- Box for input post content -->
-<div class="container" id="container">
-	<div class="box">
-		<form >
-			<textarea id="content" name="content" class="form-control" 
-			placeholder="Write Something..." maxlength="140"></textarea>
-			<br>
-			<button onclick="buatPostProfileDesa(this.value);" type="button" style="float:right;" 
-			class="btn btn-info btn-sm">POST</button>
-		</form>
-</div>
+<nav class="navbar navbar-expand-lg nnavbar-dark bg-dark">
+  <a class="navbar-brand" href="#" style="color:white">Admin Web Desa</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link"  href="index.php?page=1">Profile Desa <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"  href="index.php?page=2" onClick="">Sejarah Desa</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="index.php?page=3">Gallery</a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="index.php?page=4">Objek Wisata</a>
+      </li>
 
-<!-- div for load post list -->
-<div id="post-content">  
-</div>
+    </ul>
+  </div>
+</nav>
+<?php
+
+
+
+switch ($_GET['page']){
+    case '1':
+		include "indexProfileDesa.php";
+		
+		break;
+		
+		case '2':
+			require "indexSejarahDesa.php";
+			
+		break;
+		case '3':
+		    require "indexGaleryDesa.php";
+			
+		break;
+		case '4':
+		    require "indexObjectWisataDesa.php";
+			
+		break;
+    
+}
+?>
 
 </div>
 
