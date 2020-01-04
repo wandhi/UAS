@@ -40,7 +40,10 @@
 
 <!-- Box for input post content -->
 <div class="container" id="container">
+<br>
+<center><h5>Data Galery Desa</h5></center>
 	<div class="box">
+		<h6>Masukan Galery Desa</h6>
 		<form >
 			<textarea id="content" name="content" class="form-control" 
 			placeholder="Write Something..." maxlength="140"></textarea>
