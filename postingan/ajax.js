@@ -52,7 +52,7 @@ function buatPostSejarahDesa() {
         console.log(req)
 
         if(req.readyState == 4 && req.status ==200) {
-            ambilPostGaleryDesa();
+            ambilPostSejarahDesa();
 
             document.getElementById("content").value ="";
         }
@@ -202,14 +202,20 @@ function updatePostProfileDesa(a,e) {
    
 }
 
+<<<<<<< HEAD
 function updatePostGaleryDesa(a,e) {
     var url = "updatePostGaleryDesa.php?id="+a+"&value="+e;
+=======
+function updatePostSejarahDesa(a,e) {
+    var url = "updatePostSejarahDesa.php?id="+a+"&value="+e;
+>>>>>>> a64389d390024be252055ab0f22060591577c3f0
 
     req.open("GET", url , true);
     req.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 
     req.onreadystatechange = function() {
         if(req.readyState == 4  && req.status ==200){
+<<<<<<< HEAD
             ambilPostGaleryDesa();
         }
         // document.getElementById("post-content").innerHTML = req.responseText;
@@ -229,6 +235,9 @@ function updatePostObjectWisataDesa(a,e) {
     req.onreadystatechange = function() {
         if(req.readyState == 4  && req.status ==200){
             ambilPostObjectWisataDesa();
+=======
+            ambilPostSejarahDesa();
+>>>>>>> a64389d390024be252055ab0f22060591577c3f0
         }
         // document.getElementById("post-content").innerHTML = req.responseText;
     }
@@ -257,6 +266,7 @@ function ambilPostProfileDesaEdit(e) {
    
 }
 
+<<<<<<< HEAD
 function ambilPostGaleryDesaEdit(e) {
     var url = "getpostGaleryDesa.php?row_id=true&id="+e;
 
@@ -278,6 +288,10 @@ function ambilPostGaleryDesaEdit(e) {
 
 function ambilPostObjectWisataDesaEdit(e) {
     var url = "getpostObjectWisataDesa.php?row_id=true&id="+e;
+=======
+function ambilPostSejarahDesaEdit(e) {
+    var url = "getpostSejarahDesa.php?row_id=true&id="+e;
+>>>>>>> a64389d390024be252055ab0f22060591577c3f0
 
     req.open("GET", url , true);
     req.setRequestHeader("Content-type","application/x-www-form-urlencoded");
