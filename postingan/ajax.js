@@ -184,6 +184,43 @@ function ambilPostProfileDesa() {
    
 }
 
+function updatePostProfileDesa(a,e) {
+    var url = "updatePostProfileDesa.php?id="+a+"&value="+e;
+
+    req.open("GET", url , true);
+    req.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+
+    req.onreadystatechange = function() {
+        if(req.readyState == 4  && req.status ==200){
+            ambilPostProfileDesa();
+        }
+        // document.getElementById("post-content").innerHTML = req.responseText;
+    }
+
+    
+    req.send(null)
+   
+}
+
+function ambilPostProfileDesaEdit(e) {
+    var url = "getpostProfileDesa.php?row_id=true&id="+e;
+
+    req.open("GET", url , true);
+    req.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+
+    req.onreadystatechange = function() {
+        if(req.readyState == 4  && req.status ==200){
+            
+        }
+        console.log(req.statusText)
+        document.getElementById("post-content").innerHTML = req.responseText;
+    }
+
+    
+    req.send(null)
+   
+}
+
 function ambilPostSejarahDesa() {
     var url = "getpostSejarahDesa.php";
 	 req.open("GET", url , true);

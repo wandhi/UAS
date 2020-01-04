@@ -20,6 +20,7 @@
         </div>
         <div class='col-md-10' style='padding-left:40px;'>
             <botton style='width:80px' class='btn-danger btn-sm' onclick='hapusPost(".$user_data['id_post'].")' value='".$user_data['id_post']."'>Delete</button>
+            <botton style='width:80px' class='btn-success btn-sm' onclick='hapusPost(".$user_data['id_post'].")' value='".$user_data['id_post']."'>Delete</button>
 
         </div>
         </div>
